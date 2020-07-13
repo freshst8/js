@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+      $(document).ready(function(){
+
+        $("#button1").click(function(){
+
+            $.get("get.php", function(data){
+
+              document.getElementById('output_container').textContent = data;
+
+            });
+
+        });
+
+      });
+
+    </script>
+
+    <style>
+
+      body {
+        font-family: Verdana;
+        font-size: 11px;
+        color: #333;
+      }
+      #output_container {
+        display: block;
+        line-height: 16px;
+        position: relative;
+        top: 10px;
+        padding: 80px 80px;
+        background: #000;
+        color: #CCC;
+        width: auto;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>Trade Alerts</h1>
+
+    <button id="button1">Grab</button>
+
+    <div id="output_container">
+    </div>
+
+  </body>
+
+</html>
